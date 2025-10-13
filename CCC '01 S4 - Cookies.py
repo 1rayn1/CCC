@@ -1,3 +1,7 @@
+#Note: Uses Welzl's Algorithm
+#YAYAYAYYAYAYYAYAYYYAYAYAYYAY
+
+
 import math
 import random
 
