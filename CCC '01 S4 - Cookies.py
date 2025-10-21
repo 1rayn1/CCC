@@ -19,11 +19,11 @@ def circle_from(points):
         cx, cy = (x1 + x2) / 2.0, (y1 + y2) / 2.0
         r = dist((x1, y1), (x2, y2)) / 2.0
         return (cx, cy, r)
-    # 3 points → circumcircle
+
     (x1, y1), (x2, y2), (x3, y3) = points
     d = 2 * (x1*(y2 - y3) + x2*(y3 - y1) + x3*(y1 - y2))
     if abs(d) < 1e-12:
-        # Collinear: pick largest circle from 2 points
+
         best = None
         max_r = -1
         for i in range(3):
