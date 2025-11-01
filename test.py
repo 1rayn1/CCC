@@ -1,13 +1,11 @@
-a = input()
-lst = []
-stri = ""
-for i in range(len(a)):
-    lst.append(a[i])
+a = int(input())
 
-lst.sort(reverse = True)
-print(lst)
-"""
-for i in range(len(a)):
-    stri += lst.pop()
-
-print(stri)"""
+for i in range(a):
+    b,c,d = input().split()
+    b = int(b)
+    c = int(c)
+    d = int(d)
+    if b * c == d:
+        print("POSSIBLE DOUBLE SIGMA")
+    else:
+        print("16 BIT S/W ONLY")
