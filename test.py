@@ -1,11 +1,16 @@
-a = int(input())
+def count_ways(n, memo={}):
+    if n == 0:
+        return 1
+    if n < 0:
+        return 0
+    
+    if n in memo:
+        return memo[n]
+    
+    memo[n] = count_ways(n - 1, memo) + count_ways(n - 2, memo) + count_ways(n - 3, memo)
+    return memo[n]
 
-for i in range(a):
-    b,c,d = input().split()
-    b = int(b)
-    c = int(c)
-    d = int(d)
-    if b * c == d:
-        print("POSSIBLE DOUBLE SIGMA")
-    else:
-        print("16 BIT S/W ONLY")
+
+total_ways = count_ways(100)
+
+print(total_ways)
