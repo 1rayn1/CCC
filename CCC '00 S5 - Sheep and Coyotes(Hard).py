@@ -1,3 +1,4 @@
+#doesn't pass 7th case
 EPS = 1e-9  
 
 n = int(input().strip())
