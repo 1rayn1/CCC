@@ -4,3 +4,14 @@ m = int(input())
 #The length of the two sets
 #eg. if its 3, then there can be 3 elements: (a,b,c)
 n = int(input())
+one = {}
+two = {}
+for _ in range(n):
+    a = input()
+    one.add(a)
+for _ in range(n):
+    b = input()
+    two.add(b)
+
+for i in range(n):
+    
