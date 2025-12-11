@@ -14,4 +14,4 @@ for _ in range(n):
     two.add(b)
 
 for i in range(n):
-    
+    print()
