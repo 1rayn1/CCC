@@ -8,7 +8,7 @@ grid = [list(input()) for _ in range(ROWS)]#we love list comprehension
 for i in range(ROWS):
     for j in range(COLS):
         if grid[i][j] == "s":
-            q = deque([(0, i, j)])
+            q = deque([(0, i, j)]) #distance 0, row i, column j
         elif grid[i][j] == "e":
             end = (i,j)
 

@@ -14,11 +14,10 @@ for _ in range(ti):
         for j in range(COLS):
             if grid[i][j] == "C":
                 q.append((0, i, j))
-                grid[i][j] = "X"   # mark start visited immediately
+                grid[i][j] = "X" 
             elif grid[i][j] == "W":
                 end = (i, j)
 
-    # default result if unreachable or too far
     result = "#notworth"
 
     while q:
