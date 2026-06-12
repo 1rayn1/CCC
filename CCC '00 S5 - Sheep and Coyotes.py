@@ -23,7 +23,7 @@ for i, (x1, y1) in enumerate(sheep):
 
         #if one sheep is directly above another, it is impossible to get eaten
         #Therefore, it cannot be eaten
-        if abs(x1 - x2) < EPS:
+        if abs(x1 - x2) < EPS: #protect logic from false positive caused by floating point inaccuracies
             if y1 > y2:
                 #set minimum over maximum to invalidate this sheep
                 min_x, max_x = 1.0, 0.0  
@@ -36,11 +36,16 @@ for i, (x1, y1) in enumerate(sheep):
         #the other sheep is to the right
         # Beyond the intersection point, that sheep becomes closer.
         # So our current sheep’s "ownership" region ends here.
+        #Case 1: Sheep J is on the right
+        #So sheep j is closer right of the intersection
+        #Sheep I can only be closer to the left of intersection
         if x2 > x1:
-            max_x = min(max_x, x_intersect + EPS)
+            max_x = min(max_x, x_intersect + EPS)# so ill shrink the right boundary of sheep i
         #the other sheep is to the left
         # Before the intersection point, that sheep dominates.
         # So our current sheep’s "ownership" starts here.
+        #Case 2: sheep j is on left so sheep j is closer left of intersection
+        #sheep i can only be closer to the right of the intersection
         else:
             min_x = max(min_x, x_intersect - EPS)
         
